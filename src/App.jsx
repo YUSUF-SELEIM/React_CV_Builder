@@ -73,7 +73,7 @@ export default function App() {
     });
   };
     return (
-        <div className="flex flex-col  gap-5 md:flex-row md:w-full md:h-full bg-gray-200">
+        <div className="flex flex-col  gap-5 md:flex-row w-full h-full bg-gray-200">
             <SideBar handleTabClick={handleTabClick}></SideBar>
             <div className="flex flex-col w-full  gap-5 md:w-[25%]">
                 <ClearResume></ClearResume>
