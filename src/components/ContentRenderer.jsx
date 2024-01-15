@@ -183,6 +183,21 @@ function Education({ sections, onAddSection, onDeleteSection, onInputChange }) {
                       required
                     />
                   </div>
+                  <div>
+                    <div className="mb-2 block">
+                      <Label htmlFor={`location-${index}`} value="Location" />
+                    </div>
+                    <TextInput
+                      id={`location-${index}`}
+                      type="text"
+                      placeholder="Alexandria,Egypt"
+                      value={section.location}
+                      onChange={(e) =>
+                        onInputChange(index, "location", e.target.value)
+                      }
+                      required
+                    />
+                  </div>
                   <div className="flex space-x-3 py-3">
                     <Button
                       color="red"
