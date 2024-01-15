@@ -1,20 +1,109 @@
-// import { useState } from 'react'
-import { Button } from "flowbite-react";
-import "./index.css";
+import SideBar from "./components/SideBar.jsx";
+import ClearResume from "./components/ClearResume.jsx";
+import Resume from "./components/Resume.jsx";
+import ContentRenderer from "./components/ContentRenderer.jsx";
+import CustomizeRenderer from "./components/CustomizeRenderer.jsx";
+import { useState } from 'react';
+
+export default function App() {
+    const [activeTab, setActiveTab] = useState('0');
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phoneNo, setPhoneNo] = useState('');
+    const [address, setAddress] = useState('');
+  // State for Education component
+  const [educationSections, setEducationSections] = useState([
+    // Initial section
+    {
+      school: '',
+      degree: '',
+      startDate: '',
+      endDate: '',
+    },
+  ]);
+    const handleTabClick = (tabId) => {
+      setActiveTab(tabId);
+    };
+
+    const handleNameChange = (e) => {
+      setName(e.target.value);
+    }
+
+    const handleEmailChange = (e) => {
+      setEmail(e.target.value);
+    }
+
+    const handlePhoneNoChange = (e) => {
+      setPhoneNo(e.target.value);
+    }
+
+    const handleAddressChange = (e) => {
+      setAddress(e.target.value);
+    }
 
 
-function App() {
-  return (
-    <div className="flex bg-red-300 w-full h-full justify-between">
-      <div>
-        <Button>Click me</Button>
-        <Button>Click me</Button>
-      </div>
-      <div>
-        white page
-      </div>
-    </div>
-  );
+  // Function to add a new section to educationSections
+  const handleAddEducationSection = () => {
+    setEducationSections((prevSections) => [
+      ...prevSections,
+      {
+        school: '',
+        degree: '',
+        startDate: '',
+        endDate: '',
+      },
+    ]);
+  };
+
+  // Function to delete a section from educationSections
+  const handleDeleteEducationSection = (index) => {
+    setEducationSections((prevSections) => {
+      const newSections = [...prevSections];
+      newSections.splice(index, 1);
+      return newSections;
+    });
+  };
+
+  // Function to handle input change in an education section
+  const handleEducationInputChange = (index, field, value) => {
+    setEducationSections((prevSections) => {
+      const newSections = [...prevSections];
+      newSections[index][field] = value;
+      return newSections;
+    });
+  };
+    return (
+        <div>
+            <SideBar handleTabClick={handleTabClick}></SideBar>
+            <div className="flex flex-col w-[25%] gap-5">
+                <ClearResume></ClearResume>
+                {activeTab === '0' && (
+                    <ContentRenderer
+                        name={name}
+                        email={email}
+                        phoneNo={phoneNo}
+                        address={address}
+                        handleNameChange={handleNameChange}
+                        handleEmailChange={handleEmailChange}
+                        handlePhoneNoChange={handlePhoneNoChange}
+                        handleAddressChange={handleAddressChange}
+                        sections={educationSections}
+                        onAddSection={handleAddEducationSection}
+                        onDeleteSection={handleDeleteEducationSection}
+                        onInputChange={handleEducationInputChange}
+                    >Content</ContentRenderer>
+                )}
+                {activeTab === '1' && <CustomizeRenderer>Customize</CustomizeRenderer>}
+            </div>
+            <div className="h-[1122.520px] w-[793.688px] my-3 mr-5">
+                <Resume
+                    name={name}
+                    email={email}
+                    phoneNo={phoneNo}
+                    address={address}
+                    sections={educationSections}
+                ></Resume>
+            </div>
+        </div>
+    );
 }
-
-export default App;
