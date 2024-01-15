@@ -6,7 +6,7 @@ import { HiDocumentText, HiCog } from "react-icons/hi";
 
 export default function SideBar({ handleTabClick }) {
   return (
-    <Sidebar className="m-3 w-[15%] shadow-lg">
+    <Sidebar className="w-full shadow-lg md:w-[15%] md:m-3 ">
       <Sidebar.Logo
         href="#"
         img="./src/assets/resume.png"

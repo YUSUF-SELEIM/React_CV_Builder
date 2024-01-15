@@ -73,9 +73,9 @@ export default function App() {
     });
   };
     return (
-        <div>
+        <div className="flex flex-col  gap-5 md:flex-row md:w-full md:h-full bg-gray-200">
             <SideBar handleTabClick={handleTabClick}></SideBar>
-            <div className="flex flex-col w-[25%] gap-5">
+            <div className="flex flex-col w-full  gap-5 md:w-[25%]">
                 <ClearResume></ClearResume>
                 {activeTab === '0' && (
                     <ContentRenderer
@@ -95,7 +95,7 @@ export default function App() {
                 )}
                 {activeTab === '1' && <CustomizeRenderer>Customize</CustomizeRenderer>}
             </div>
-            <div className="h-[1122.520px] w-[793.688px] my-3 mr-5">
+            <div className="w-full h-full md:h-[1122.520px] md:w-[793.688px] md:my-3 md:mr-5">
                 <Resume
                     name={name}
                     email={email}

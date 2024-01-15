@@ -7,7 +7,7 @@ import { MdLocationOn } from "react-icons/md";
 export default function Resume({ name, email, phoneNo, address ,sections}) {
   return (
     <div className="h-full w-full bg-white shadow-md flex flex-col">
-      <header className="h-[15%]  flex flex-col items-center justify-center text-4xl font-bold">
+      <header className="h-[15%] flex flex-col items-center justify-center text-4xl font-bold p-10 md:p-0">
         {name}
         <div className="w-full mt-5 flex justify-center space-x-4 text-sm font-normal">
           {email && (
