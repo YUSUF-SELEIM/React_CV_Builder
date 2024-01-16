@@ -10,7 +10,6 @@ export default function SideBar({ handleTabClick }) {
       <Sidebar.Logo
         href="#"
         img="./src/assets/resume.png"
-        imgAlt="Flowbite logo"
         className="justify-center"
       >
       </Sidebar.Logo>
