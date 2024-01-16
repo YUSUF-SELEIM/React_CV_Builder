@@ -8,8 +8,7 @@ export default function SideBar({ handleTabClick }) {
   return (
     <Sidebar className="w-full shadow-lg   ">
       <Sidebar.Logo
-        href="#"
-        img="./src/assets/resume.png"
+        img="src/assets/resume.png"
         className="justify-center"
       >
       </Sidebar.Logo>
