@@ -141,7 +141,7 @@ export default function App() {
   const handleDebugData = () => {
     // Populate the state with debug data
     setName("Yusuf Abdelfattah");
-    setEmail("yusufabdelfattah207@gmailcom");
+    setEmail("yusufabdelfattah207@gmail.com");
     setPhoneNo("+201210130805");
     setAddress("Alexandria,Egypt");
     setEducationSections(() => [
