@@ -1,9 +1,10 @@
-import { Button } from 'flowbite-react';
+/* eslint-disable react/prop-types */
+import { Button } from "flowbite-react";
 
-export default function ClearResume(){
-    return(
-        <div className='w-full mt-3 bg-gray-50 p-3 shadow-lg rounded-lg flex justify-center'>
-            <Button color="failure" className='p-.2'>Clear Resume</Button>
-        </div>
-    );
+export default function ClearResume({ handleClearResume }) {
+  return (
+    <Button color="failure" onClick={handleClearResume}>
+      Clear Resume
+    </Button>
+  );
 }
