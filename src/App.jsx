@@ -199,7 +199,7 @@ export default function App() {
           <ClearResume handleClearResume={handleClearResume}></ClearResume>
           <LoadExample handleDebugData={handleDebugData}></LoadExample>
         </div>
-        <div className="mt-3"><img src="src/assets/flag.png" alt="" /></div>
+        <div className="mt-3 shadow-lg"><img src="src/assets/flag.png" alt="" /></div>
       </div>
       <div className="flex flex-col w-full  gap-5 md:w-[25%]">
         {activeTab === "0" && (
